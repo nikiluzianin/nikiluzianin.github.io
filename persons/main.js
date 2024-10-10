@@ -18,7 +18,7 @@ const processData = (userData) => {
         let divForUser = document.createElement('div');
         divForUser.className = "divForUser";
         let image = document.createElement('img');
-        image.src = "https://robohash.org/" + user.id;
+        image.src = "https://robohash.org/" + user.id + "?set=set4";
         const userString = "\n" + user.id + "\n" + user.name + "\n" + user.username + "\n" + user.email;
         divForUser.append(image);
         divForUser.append(userString);

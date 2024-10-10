@@ -13,6 +13,7 @@ const carsTable = document.querySelector("#cars-table");
 const searchResult = document.querySelector("#search-result");
 const carData = document.querySelector("#car-data");
 
+const informtaionField = document.querySelector(".information");
 
 const platesFormatRegex = /^[a-zA-Z]{3}\d{3}$/;
 const EARLIEST_YEAR = 1880;
@@ -31,10 +32,6 @@ class Car {
         this.owner = owner;
         this.price = price;
         this.color = color;
-    }
-
-    honks() {
-        console.log("car " + this.license + " honks loudly");
     }
 
     getCarInfo(discountPrice = "") {
@@ -140,10 +137,13 @@ const searchFromSearchBar = (searchInput) => {
         const foundCar = searchCar(searchInput);
         if (foundCar) {
             const discountPriceInfo = (CURRENT_YEAR - foundCar.year > 10) ? ("\ndiscounted price: " + foundCar.price * DISCOUNT_PERCENTAGE) : "";
-            printSearchResults("Car found, info: \n" + foundCar.getCarInfo(discountPriceInfo));
-            foundCar.honks();
+            printSearchResults("Info of car with plates " + searchInput.toUpperCase() + ": \n" + foundCar.getCarInfo(discountPriceInfo));
             highlightCar(foundCar);
-        } else printSearchResults("No results found");
+            printInformation("Car found");
+        } else {
+            //printSearchResults("No results found");
+            printInformation("No results found", true);
+        }
     }
 }
 
@@ -152,7 +152,8 @@ const addCarFromFields = () => {
         let newCar = new Car(licenseText.value, makerText.value, modelText.value, yearText.value, ownerText.value, priceText.value, colorText.value);
         resetFields();
         addCar(newCar);
-        printCarData('New car added:\n' + newCar.getCarInfo());
+        //printCarData('New car added:\n' + newCar.getCarInfo());
+        printInformation("New car added");
     }
 }
 
@@ -204,6 +205,13 @@ const printSearchResults = (results) => searchResult.textContent += results;
 
 const printCarData = (allData) => carData.textContent += allData;
 
+const printInformation = (info, error = false) => {
+    informtaionField.classList.toggle('visible');
+    informtaionField.textContent = info;
+    informtaionField.style.backgroundColor = error ? "#ffa8b9" : "#a8ffb5";
+    setTimeout(() => informtaionField.classList.toggle('visible'), 5000);
+}
+
 
 // cleaning the text fields
 const resetFields = () => {
@@ -254,12 +262,12 @@ const prepareWithLocalStorage = (parameter = true) => {
     if (parameter) {
         let loadedCars = JSON.parse(localStorage.getItem('cars'));
         (loadedCars == undefined) ? cars = [] : loadedCars.forEach((car) => addCar(newCarFromObject(car)));
-    } else if (!parameter || cars == []) {
+    }
+    if ((!parameter) || (cars.length == 0)) {
         addCar(new Car("asd123", "VW", "Scirpccp", 2022, "Nikita", 10000, "Red"));
         addCar(new Car("asd124", "Audi", "A3", 2000, "Other person", 2000, "White"));
     }
 }
 
 prepareWithLocalStorage(SAVING_ON);
-
 
