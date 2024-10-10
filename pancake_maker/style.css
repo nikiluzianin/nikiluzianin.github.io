@@ -50,6 +50,7 @@ input[type="radio"] {
 
 .image-container {
   position: relative;
+  height: 100vh;
   flex: 1;
 }
 
@@ -70,7 +71,7 @@ input[type="radio"] {
 .price-banner {
   position: absolute;
   top: 20px;
-  left: 50%;
+  left: 70%;
   background-color: #d17b49;
   color: white;
   border-radius: 50%;
@@ -143,15 +144,20 @@ td {
   position: relative;
 }
 
-@media only screen and (max-width: 720px) {
+@media (max-width: 768px) {
 
   body {
+    display: block;
     align-items: start;
   }
 
   .price-banner {
+    position: fixed;
     justify-content: center;
-    position: inherit;
+  }
+
+  .image-container {
+    height: 80vh;
   }
 
   .container {

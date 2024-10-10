@@ -209,7 +209,7 @@ const printInformation = (info, error = false) => {
     informtaionField.classList.toggle('visible');
     informtaionField.textContent = info;
     informtaionField.style.backgroundColor = error ? "#ffa8b9" : "#a8ffb5";
-    setTimeout(() => informtaionField.classList.toggle('visible'), 5000);
+    setTimeout(() => informtaionField.classList.toggle('visible'), 4000);
 }
 
 
