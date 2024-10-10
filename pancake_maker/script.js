@@ -304,23 +304,19 @@ const showAllOrders = () => {
 }
 
 const toggleModal = () => {
-    const delay = 1000;
-    setTimeout(() => overlay.classList.toggle('visible'), delay);
-    //overlay.classList.toggle('visible');
+    overlay.classList.toggle('visible');
 }
 
-/*
-function debounce(func, delay) {
-  let inDebounce;
-  return function () {
-    const context = this;
-    const args = arguments;
-    clearTimeout(inDebounce);
-    inDebounce = setTimeout(() => func.apply(context, args), delay);
-  };
+const debounce = (func, timeout = 1) => {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    }
 }
 
-*/
+const debounceToggle = debounce(() => toggleModal());
+
 
 wholeForm.addEventListener('change', updatePrice);
 
@@ -328,9 +324,9 @@ document.querySelector('#orderSummary').addEventListener('click', orderSummary);
 document.querySelector('#saveOrder').addEventListener('click', saveOrder);
 document.querySelector('#allOrders').addEventListener('click', showAllOrders);
 
-document.querySelector("#about").addEventListener("click", toggleModal);
-overlay.addEventListener("click", toggleModal);
-document.querySelector("#closeButton").addEventListener("click", toggleModal);
+document.querySelector("#about").addEventListener("click", debounceToggle);
+overlay.addEventListener("click", debounceToggle);
+document.querySelector("#closeButton").addEventListener("click", debounceToggle);
 
 
 createNewOrder();
