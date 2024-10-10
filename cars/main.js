@@ -105,74 +105,6 @@ const checkInputs2 = () => {
     return ((validationErrors.length == 0));
 }
 
-/*
-const checkInputs2 = () => {
-let allErrors = []; // TODO
- 
- 
-if (actuallyCheck) {
-    try {
-        if (licenseText.value == "") {
-            throw new Error("License number empty");
-        } else if (!platesFormatRegex.test(licenseText.value)) {
-            throw new Error("License number is not correct")
-        } else if (searchCar(licenseText.value)) {
-            throw new Error("Car with such license number already exists")
-        }
-    } catch (error) {
-        allErrors = allErrors + error.message + "\n";
-    }
- 
-    try {
-        if (makerText.value == "")
-            throw new Error("Car maker empty");
-    } catch (error) {
-        allErrors = allErrors + error.message + "\n";
-    }
- 
-    try {
-        if (modelText.value == "") throw new Error("Car model empty");
-    } catch (error) {
-        allErrors = allErrors + error.message + "\n";
-    }
- 
-    try {
-        if (yearText.value == "") {
-            throw new Error("Car year empty");
-        } else if ((yearText.value < 1900) || (yearText.value > currentYear)) {
-            throw new Error("Car year should be between 1900 and " + currentYear);
-        }
-    } catch (error) {
-        allErrors = allErrors + error.message + "\n";
-    }
- 
-    try {
-        if (ownerText.value == "") throw new Error("Car owner empty");
-    } catch (error) {
-        allErrors = allErrors + error.message + "\n";
-    }
- 
-    try {
-        if (priceText.value == "") {
-            throw new Error("Car price empty");
-        } else if (priceText.value < 0) {
-            throw new Error("Car preice should be positive");
-        }
-    } catch (error) {
-        allErrors = allErrors + error.message + "\n";
-    }
- 
-    try {
-        if (colorText.value == "") throw new Error("Car color empty");
-    } catch (error) {
-        allErrors = allErrors + error.message + "\n";
-    }
- 
-    carDataErrors.textContent = allErrors;
-}
-return (allErrors == "");
-}*/
-
 const checkInputs1 = (actuallyCheck) => {
     if (actuallyCheck)
         return checkInputs2();
@@ -322,7 +254,7 @@ const prepareWithLocalStorage = (parameter = true) => {
     if (parameter) {
         let loadedCars = JSON.parse(localStorage.getItem('cars'));
         (loadedCars == undefined) ? cars = [] : loadedCars.forEach((car) => addCar(newCarFromObject(car)));
-    } else {
+    } else if (!parameter || cars == []) {
         addCar(new Car("asd123", "VW", "Scirpccp", 2022, "Nikita", 10000, "Red"));
         addCar(new Car("asd124", "Audi", "A3", 2000, "Other person", 2000, "White"));
     }
