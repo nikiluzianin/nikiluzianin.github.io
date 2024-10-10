@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.space-for-object {
+    white-space: pre-wrap;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: center;
+}
+
+.divForUser {
+    max-width: 100vw;
+    background-color: rgb(226, 251, 251);
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}

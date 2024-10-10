@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Pancake Maker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class=" image-container">
+      <img src="assets/pexels-ash-craig-122861-376464.jpg" alt="Delicious pancakes" id="main-picture" />
+      <div class="price-banner"><span id="totalPrice">$5</span></div>
+    </div>
+    <div class="form-container">
+      <h2>Customize Your Pancake</h2>
+      <div class="customization-section">
+        <label for="type">Choose your pancake type:</label>
+        <select id="type">
+          <option value="5">Classic - $5</option>
+          <option value="6">Chocolate - $6</option>
+          <option value="7">Blueberry - $7</option>
+        </select>
+      </div>
+      <div class="customization-section">
+        <p>Select your toppings ($1 each):</p>
+        <input type="checkbox" id="nuts" value="1" />Nuts<br />
+        <input type="checkbox" id="bananas" value="1" />Bananas<br />
+        <input type="checkbox" id="syrup" value="1" />Syrup<br />
+      </div>
+      <div class="customization-section">
+        <p>Add extras:</p>
+        <input type="checkbox" id="whippedCream" value="2" />Whipped Cream -
+        $2<br />
+        <input type="checkbox" id="iceCream" value="3" />Ice Cream - $3<br />
+      </div>
+      <div class="customer-name">
+        <label for="customerName">Your name:</label>
+        <input type="text" id="customerName">
+      </div>
+      <div class="delivery-options">
+        <p> Pick a delivery option</p>
+        <input type="radio" id="eatIn" name="deliveryOptions" value="0" checked>
+        <label for="eatIn">Eat In</label><br>
+        <input type="radio" id="pickUp" name="deliveryOptions" value="0">
+        <label for="pickUp">Pick Up</label><br>
+        <input type="radio" id="delivery" name="deliveryOptions" value="5">
+        <label for="delivery">Delivery (+5$)</label><br>
+      </div>
+      <div class="price-display">
+        <h3>Total Price: <span id="totalPrice">$5</span></h3>
+      </div>
+      <div class="buttons">
+        <button type="submit" id="orderSummary">Order summary</button>
+        <button type="submit" id="saveOrder">Make an order!</button>
+        <button type="submit" id="allOrders">Show all orders</button>
+      </div>
+      <div id="orderInformation" style="overflow-x: auto;">
+
+      </div>
+    </div>
+  </div>
+  <button type="button" id="about">About</button>
+  <div class="overlay">
+    <div class="modal">
+      <h3>About Pancakes</h3>
+      <p>
+        <i>They are really good.</i> <br><br>
+      </p>
+      <ul>
+        <li>You can customize your pancake.</li>
+        <li>"Order Summary" button displays a brief overview of your current order in a table.</li>
+        <li>"Make an Order" button saves it to the system.</li>
+        <li>"Show All Orders" button lists all saved orders, marking the current one as pending.</li>
+        <li>"Reset" cleans the current order</li>
+        <li>"Complete" deletes orders.</li>
+        <li>Modify order via "Edit", and save changes with the "Update Order" button.</li>
+      </ul>
+
+      <button id="closeButton">Close</button>
+
+    </div>
+  </div>
+
+  <script src=" script.js">
+  </script>
+</body>
+
+</html>
