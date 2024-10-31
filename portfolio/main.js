@@ -130,7 +130,8 @@ const toggleMenu = () => {
 function scrollFunction() {
 
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.querySelector("header").style.backdropFilter = "blur(100px)";
+        //document.querySelector("header").style.backdropFilter = "blur(100px)";
+        document.querySelector("header").style.backgroundColor = "rgb(0 0 0 / 80%)";
         if (scrollPosition[0] - document.body.scrollTop > minStepToBecomeScrolling || scrollPosition[1] - document.documentElement.scrollTop > minStepToBecomeScrolling) {
             backToTopButton.style.display = "block";
             document.querySelector("header").style.display = "flex";

@@ -102,6 +102,7 @@ h3 {
     grid-auto-rows: 13.2vh;
     grid-auto-columns: 1fr;
     grid-template-areas:
+
         "banner banner banner small1 about about"
         "banner banner banner small2 about about"
         "banner banner banner small3 about about"
@@ -487,13 +488,12 @@ h3 {
     .hidden_text {
 
         height: 100%;
-        background-color: black;
-        color: white;
+        background: rgb(0 0 0 / 60%);
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 2vh;
-        opacity: 70%;
+        opacity: 100%;
     }
 
     .hidden_text:hover {
@@ -503,7 +503,7 @@ h3 {
     .hidden_text h3 {
         font-size: 2.3rem;
         display: block;
-        color: white;
+        color: var(--primary-color);
     }
 
     .hidden_text p {
