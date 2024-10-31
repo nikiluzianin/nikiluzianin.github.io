@@ -46,7 +46,6 @@ await fetch('./assets/skills.json')
         // printSkills();
     });
 
-console.log(skillsData);
 // loading all the skills
 
 
@@ -130,22 +129,22 @@ const toggleMenu = () => {
 
 function scrollFunction() {
 
-    if (scrollPosition[0] - document.body.scrollTop > minStepToBecomeScrolling || scrollPosition[1] - document.documentElement.scrollTop > minStepToBecomeScrolling) {
-        backToTopButton.style.display = "block";
-        document.querySelector("header").style.display = "flex";
-
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-            document.querySelector("header").style.backdropFilter = "blur(100px)";
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.querySelector("header").style.backdropFilter = "blur(100px)";
+        if (scrollPosition[0] - document.body.scrollTop > minStepToBecomeScrolling || scrollPosition[1] - document.documentElement.scrollTop > minStepToBecomeScrolling) {
+            backToTopButton.style.display = "block";
+            document.querySelector("header").style.display = "flex";
         } else {
-            document.querySelector("header").style.backgroundColor = "Transparent";
+            backToTopButton.style.display = "none";
+            document.querySelector("header").style.display = "none";
             //document.querySelector("header").style.height = "100px";
             //document.querySelector("header, logo h1").style.fontSize = "12px";
         }
 
         // if scrolling top then show the controlling elements
     } else {
-        backToTopButton.style.display = "none";
-        document.querySelector("header").style.display = "none";
+        document.querySelector("header").style.backgroundColor = "Transparent";
+
     }
     scrollPosition[0] = document.body.scrollTop;
     scrollPosition[1] = document.documentElement.scrollTop;
