@@ -17,21 +17,13 @@ class Project {
 };
 // class for the projects for easy addition
 
-const projectsData = [];
-/*
-import projectsInfo from './assets/projects.json' with {type: "json"};
-console.log(projectsInfo[0]);
-*/
-/*const info = await fetch('./assets/projects.json');
-await info.json();
-console.log(info.json());*/
 
+const projectsData = [];
 await fetch('./assets/projects.json')
     .then((response) => response.json())
     .then((json) => json.projects.forEach(({ name, description, imagePath, link }) => projectsData.push(new Project(name, description, imagePath, link))));
 
-//json.forEach(({ name, description, imagePath, link }) => projectsData.push(new Project(name, description, imagePath, link))));
-//projectsInfo.projects.forEach(({ name, description, imagePath, link }) => projectsData.push(new Project(name, description, imagePath, link)));
+
 // loading all the projects from json
 
 class Skill {
@@ -44,10 +36,10 @@ class Skill {
 // class for the skills for easy addition
 
 const skillsData = [];
-// import skillsInfo from './assets/skills.json' with {type: "json"};
-/*
-const skillsInfo = fetch('./assets/skills.json');
-skillsInfo.skills.forEach(({ name, level, icon }) => skillsData.push(new Skill(name, level, icon)));*/
+await fetch('./assets/skills.json')
+    .then((response) => response.json())
+    .then((json) => json.skills.forEach(({ name, level, icon }) => skillsData.push(new Skill(name, level, icon))));
+
 // loading all the skills
 
 
