@@ -282,6 +282,8 @@ h3 {
     margin: auto;
 
     padding: 10px;
+    font-family: var(--font-inter), 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
     background: var(--accent-color);
     color: var(--primary-color);
     border-radius: var(--main-radius);
@@ -411,6 +413,8 @@ h3 {
     background: var(--accent-color);
     color: var(--primary-color);
     border-radius: var(--main-radius);
+    font-family: var(--font-inter), 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
     border: none;
     width: 40%;
     margin-bottom: 20px;
