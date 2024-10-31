@@ -21,7 +21,10 @@ class Project {
 const projectsData = [];
 await fetch('./assets/projects.json')
     .then((response) => response.json())
-    .then((json) => json.projects.forEach(({ name, description, imagePath, link }) => projectsData.push(new Project(name, description, imagePath, link))));
+    .then((json) => {
+        json.projects.forEach(({ name, description, imagePath, link }) => projectsData.push(new Project(name, description, imagePath, link)));
+        // printProjects();
+    });
 
 
 // loading all the projects from json
@@ -38,8 +41,12 @@ class Skill {
 const skillsData = [];
 await fetch('./assets/skills.json')
     .then((response) => response.json())
-    .then((json) => json.skills.forEach(({ name, level, icon }) => skillsData.push(new Skill(name, level, icon))));
+    .then((json) => {
+        json.skills.forEach(({ name, level, icon }) => skillsData.push(new Skill(name, level, icon)));
+        // printSkills();
+    });
 
+console.log(skillsData);
 // loading all the skills
 
 
@@ -157,7 +164,6 @@ backToTopButton.addEventListener('click', (ev) => {
 
 
 const main = () => {
-    console.log()
     printProjects();
     printSkills();
 }
