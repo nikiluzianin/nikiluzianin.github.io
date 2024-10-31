@@ -445,6 +445,7 @@ h3 {
     font-family: inherit;
     text-transform: uppercase;
     position: fixed;
+    display: none;
     right: 2rem;
     bottom: 2rem;
 }
