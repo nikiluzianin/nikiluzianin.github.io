@@ -1,0 +1,34 @@
+{
+    "skills": [
+        {
+            "name": "JS",
+            "level": 30,
+            "icon": "./assets/icons8-javascript-100.png"
+        },
+        {
+            "name": "CSS",
+            "level": 80,
+            "icon": "./assets/icons8-css-100.png"
+        },
+        {
+            "name": "Python",
+            "level": 50,
+            "icon": "./assets/icons8-python-100.png"
+        },
+        {
+            "name": "Shopify",
+            "level": 50,
+            "icon": "./assets/icons8-shopify-100.png"
+        },
+        {
+            "name": "HTML",
+            "level": 50,
+            "icon": "./assets/icons8-html-5-100.png"
+        },
+        {
+            "name": "React",
+            "level": 3,
+            "icon": "./assets/icons8-react-120.png"
+        }
+    ]
+}

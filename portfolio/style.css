@@ -1,0 +1,554 @@
+:root {
+    --main-radius: 6px;
+    --main-background-color: #0A0908;
+    --primary-color: #CCCCCC;
+    --secondary-color: #272727;
+    --accent-color: #4B46AE;
+    --font-size: 1.1rem;
+    --font-inter: Inter;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    text-align: center;
+    display: flex;
+
+    padding: 3vh 2vw;
+    width: 100%;
+    position: fixed;
+    background-color: transparent;
+    justify-content: space-between;
+    height: 5vh;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: inherit;
+}
+
+.logo img {
+    margin: 0 10px;
+    height: 80%;
+    filter: brightness(0) saturate(100%) invert(29%) sepia(10%) saturate(7496%) hue-rotate(218deg) brightness(95%) contrast(94%);
+}
+
+.mobile {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+li {
+    color: var(--primary-color);
+}
+
+li a {
+    margin: 2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+li a:hover {
+    color: var(--accent-color);
+}
+
+body {
+    background-color: var(--main-background-color);
+    color: var(--primary-color);
+    font-size: var(--font-size);
+    font-family: var(--font-inter), 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+h1 {
+    padding: 1vh 0;
+    font-size: 4rem;
+    font-weight: 350;
+}
+
+h2 {
+    /*text-align: center;*/
+    padding: 3vh 0;
+    font-size: 4rem;
+    font-weight: 350;
+}
+
+h3 {
+    padding: 1vh 0;
+    font-weight: 300;
+    font-size: 2.5rem;
+}
+
+#banner {
+    padding-top: 7vh;
+    display: grid;
+    margin: 0 auto;
+    grid-auto-rows: 13.2vh;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+        "banner banner banner small1 about about"
+        "banner banner banner small2 about about"
+        "banner banner banner small3 about about"
+        "projects projects project1 project1 about about"
+        "projects projects project1 project1 about about"
+        "projects projects project2 project2 contact contact"
+        "projects projects project2 project2 contact contact";
+
+}
+
+.hidden_text {
+
+    height: 100%;
+    background-color: black;
+    color: white;
+    opacity: 0%;
+    transition: opacity 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh;
+}
+
+.hidden_text:hover {
+    opacity: 80%;
+}
+
+.hidden_text h3 {
+    display: none;
+}
+
+.hidden_text p {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.hidden_text a {
+    text-decoration: none;
+}
+
+.banner_section:first-child::before {
+    content: "Welcome to";
+    font-size: 2rem;
+}
+
+.banner_section:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-area: banner;
+    background-image: url("./assets/pexels-adrien-olichon-1257089-2387793.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner_section:first-child h1 {
+    line-height: 4.5rem;
+}
+
+.banner_section:nth-child(2) {
+    background-color: blue;
+    grid-area: projects;
+    background-size: cover;
+    background-position: center;
+    background-image: url("./assets/pexels-cottonbro-3205568.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner_section:nth-child(3) {
+    background-color: darkblue;
+    grid-area: contact;
+    background-image: url("./assets/pexels-pixabay-207456.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner_section:nth-child(4) {
+
+
+    background-color: red;
+    background-image: url("./assets/IMG_0189-2.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-area: about;
+}
+
+.banner_section:nth-child(5) {
+    background-color: yellow;
+    grid-area: project1;
+    background-image: url("./assets/IMG_1348.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.banner_section:nth-child(6) {
+    background-color: pink;
+    background-image: url("./assets/IMG_1798-2-2-1024x520.jpg.webp");
+    grid-area: project2;
+    background-size: cover;
+    background-position: bottom;
+
+}
+
+.banner_section:nth-child(7) {
+    background-color: violet;
+    grid-area: small3;
+    background-image: url("./assets/Screenshot 2024-10-30 at 13.09.17.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.banner_section:nth-child(8) {
+    background-color: purple;
+    grid-area: small1;
+    background-image: url("./assets/IMG_1627-2.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+
+.banner_section:nth-child(9) {
+    background-color: darkcyan;
+    grid-area: small2;
+    background-image: url("./assets/pexels-cottonbro-3944405.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#projects {
+    padding: 0 4vw;
+}
+
+#projects_space {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 2vh;
+    gap: 1vw;
+}
+
+.project_card {
+    margin-bottom: 2vh;
+    padding: 2rem;
+    max-width: 350px;
+    border-radius: var(--main-radius);
+    border: 1px solid var(--secondary-color);
+    transition: opacity 0.5s;
+}
+
+.project_card:hover {
+    opacity: 66%;
+
+}
+
+.project_card img {
+    object-fit: cover;
+    height: 30vh;
+    width: 100%;
+    padding-bottom: 1vh;
+
+}
+
+.project_card a {
+    color: var(--accent-color);
+    text-decoration: none;
+
+}
+
+#expand_projects {
+    justify-content: center;
+    border: none;
+
+    display: block;
+    margin: auto;
+
+    padding: 10px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border-radius: var(--main-radius);
+    border: none;
+    text-transform: uppercase;
+}
+
+#about {
+
+    padding: 0 4vw;
+    margin-bottom: 3vh;
+}
+
+.about_info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.about_info img {
+
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.about_info .text_field {
+    min-width: 300px;
+    max-width: 400px;
+    flex: 1;
+}
+
+.about_info #skills {
+    padding: 2vh 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#skills {
+    padding: 0 4vw;
+}
+
+#skills_space {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill_card {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.skill_card img {
+    width: 20%;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7376%) hue-rotate(135deg) brightness(89%) contrast(77%);
+}
+
+.progressBar {
+    background-color: var(--primary-color);
+    height: 1.5vh;
+    min-width: 120px;
+    border-radius: 10px;
+}
+
+.progressLevel {
+    background-color: var(--accent-color);
+    height: 100%;
+    border-radius: 10px;
+}
+
+.start-of-footer {
+    padding-top: 100px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.line {
+    border-bottom: 2px solid var(--secondary-color);
+
+}
+
+#contact-form {
+    width: 400px;
+    margin: 0 auto 3vh;
+    text-align: center;
+
+}
+
+#contact-form form {
+    margin: 20px;
+}
+
+.contact_line {
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact-form label {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+#contact-form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 200px;
+    border: 0px;
+    border-radius: var(--main-radius);
+}
+
+
+#msg {
+    height: 70px;
+}
+
+#contact-form button {
+    display: block;
+    margin: auto;
+    margin-top: 1vh;
+
+    padding: 10px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border-radius: var(--main-radius);
+    border: none;
+    width: 40%;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+
+}
+
+#socials {
+    display: flex;
+    justify-content: center;
+    gap: 5px
+}
+
+#socials img {
+    width: 25px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7376%) hue-rotate(135deg) brightness(89%) contrast(77%);
+}
+
+
+#back_to_top {
+    border: none;
+    border-radius: var(--main-radius);
+    box-shadow: none;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+}
+
+#back_to_top img {
+    width: 60px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7376%) hue-rotate(135deg) brightness(89%) contrast(77%);
+
+}
+
+
+#copyright {
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+}
+
+@media (max-width:786px) {
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    #banner {
+        grid-auto-rows: 13.5 vh;
+        grid-template-areas:
+            "banner banner"
+            "banner banner"
+            "banner banner"
+            "projects projects"
+            "projects projects"
+            "about contact"
+            "about contact"
+        ;
+    }
+
+    .hidden_text {
+
+        height: 100%;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2vh;
+        opacity: 70%;
+    }
+
+    .hidden_text:hover {
+        opacity: 80%;
+    }
+
+    .hidden_text h3 {
+        font-size: 2.3rem;
+        display: block;
+        color: white;
+    }
+
+    .hidden_text p {
+        display: none;
+    }
+
+    .banner_section:nth-child(n+5) {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+        height: inherit;
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7376%) hue-rotate(135deg) brightness(89%) contrast(77%);
+        width: 2rem;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.responsive {
+        display: block;
+        background-color: var(--main-background-color);
+        color: #333;
+        position: absolute;
+        left: 0;
+        width: 100%;
+    }
+
+    ul.responsive li {
+        display: block;
+        margin: 2rem 1rem;
+    }
+
+    .about_info .text_field {
+        margin: 5vh 2rem 0;
+        max-width: 400px;
+    }
+
+    #contact-form {
+        width: 350px;
+
+    }
+}
+
+/*
+
+*/

@@ -1,0 +1,28 @@
+{
+    "projects": [
+        {
+            "name": "Anxiing Studio",
+            "description": "A tufting art studio in Vantaa, where I make custom rugs myself and host workshops, where peoiple can try this form of art too.",
+            "imagePath": "./assets/IMG_6787-2-2.jpg",
+            "link": "https://anxiing.com"
+        },
+        {
+            "name": "Artmu",
+            "description": "We are building a community of artists in Finland, helping emerging and already established artists to reach new heights.",
+            "imagePath": "./assets/IMG_20240801_161559-2.jpg",
+            "link": "https://artmudesign.com"
+        },
+        {
+            "name": "Pancakes",
+            "description": "An app that I did as a part of JS course, taht has quitea lot of functions, but lacks the concept.",
+            "imagePath": "./assets/pexels-gabby-k-7144669.jpg",
+            "link": "https://nikiluzianin.github.io/pancake_maker/"
+        },
+        {
+            "name": "Kottamie Hammock",
+            "description": "Me and my wife designed the best possible cat bed in existance, that is comfortable, high-quality and good looking. Fully made in Finland.",
+            "imagePath": "./assets/Kottamie_0205_IMG_8152_full.jpg.webp",
+            "link": "https://lemmikkimaa.fi/products/lemmikkiriippumatto"
+        }
+    ]
+}
