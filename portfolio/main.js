@@ -129,30 +129,32 @@ const toggleMenu = () => {
 
 function scrollFunction() {
 
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        //document.querySelector("header").style.backdropFilter = "blur(100px)";
-        document.querySelector("header").style.backgroundColor = "rgb(0 0 0 / 80%)";
-    } else {
-        document.querySelector("header").style.backgroundColor = "Transparent";
+    const notOnTop = (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80);
 
-    }
+    const scrollingUp = (scrollPosition[0] - document.body.scrollTop > minStepToBecomeScrolling || scrollPosition[1] - document.documentElement.scrollTop > minStepToBecomeScrolling)
 
-    if (scrollPosition[0] - document.body.scrollTop > minStepToBecomeScrolling || scrollPosition[1] - document.documentElement.scrollTop > minStepToBecomeScrolling) {
+
+    if (scrollingUp && notOnTop) {
         backToTopButton.style.display = "block";
         document.querySelector("header").style.display = "flex";
-    } else {
+        document.querySelector("header").style.backgroundColor = "rgb(0 0 0 / 80%)";
+    } else if (scrollingUp && !notOnTop) {
+        backToTopButton.style.display = "none";
+        document.querySelector("header").style.display = "flex";
+        document.querySelector("header").style.backgroundColor = "Transparent";
+    } else if (!scrollingUp && notOnTop) {
         backToTopButton.style.display = "none";
         document.querySelector("header").style.display = "none";
-        //document.querySelector("header").style.height = "100px";
-        //document.querySelector("header, logo h1").style.fontSize = "12px";
+    } else {
+        backToTopButton.style.display = "none";
+        document.querySelector("header").style.display = "flex";
+        document.querySelector("header").style.backgroundColor = "Transparent";
     }
 
     // if scrolling top then show the controlling elements
 
     scrollPosition[0] = document.body.scrollTop;
     scrollPosition[1] = document.documentElement.scrollTop;
-
-
 }
 
 
